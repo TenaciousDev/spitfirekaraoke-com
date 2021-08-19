@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+html {
+  height: calc(100%);
+  background-color: #000000;
+  background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
+}
+
+@media only screen and (max-height: 700px) {
+  html {
+    height: unset;
+  }
+}
+
+main {
+  height: calc(100%);
+  /* background-color: #000000;
+  background-image: linear-gradient(315deg, #000000 0%, #414141 74%); */
+  display: flex;
+}
+
+h1 {
+  /* font-family: "Roboto Slab", serif; */
+  font-size: 5rem;
+  font-weight: 800;
+  /* background: -webkit-linear-gradient(315deg, #d7e1ec 0%, #ffffff 74%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase; */
+  margin: auto;
+  letter-spacing: 0.5rem;
+}
+
+/* h4 {
+  font-size: 2rem;
+  text-transform: capitalize;
+  margin: 0.3rem auto 2rem;
+  letter-spacing: normal;
+} */
+
+hr {
+  border-top: black 0.1rem solid;
+  border-bottom: none;
+  border-right: none;
+  border-left: none;
+  width: 50%;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 960px;
+  place-items: auto center;
+  margin: auto;
+}
+
+.link-wrap {
+  margin: 1rem auto;
+  padding: 0.2rem;
+}
+
+.social-icon {
+  width: 5rem;
+}
