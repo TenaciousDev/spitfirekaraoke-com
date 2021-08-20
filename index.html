@@ -18,7 +18,11 @@
         <h1>🎤🔥</h1>
         <hr />
         <div class="link-wrap">
-          <a href="https://www.facebook.com/SpitfireKaraoke" target="_blank">
+          <a
+            href="https://www.facebook.com/SpitfireKaraoke"
+            target="_blank"
+            id="fb-link"
+          >
             <img
               class="social-icon"
               src="assets/fb_facebook.svg"
@@ -27,12 +31,17 @@
           </a>
         </div>
         <div class="link-wrap">
-          <a href="https://www.instagram.com/spitfire_karaoke/" target="_blank"
-            ><img
+          <a
+            href="https://www.instagram.com/spitfire_karaoke/"
+            target="_blank"
+            id="ig-link"
+          >
+            <img
               src="assets/instagram.svg"
               alt="instagram"
               class="social-icon"
-          /></a>
+            />
+          </a>
         </div>
         <!-- <div class="link-wrap">
           <img src="assets/twitter.svg" alt="twitter" class="social-icon" />
@@ -49,6 +58,47 @@
         </div> -->
       </div>
     </main>
-    <footer></footer>
   </body>
+  <script>
+    function getMobileOperatingSystem() {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      if (
+        userAgent.match(/iPad/i) ||
+        userAgent.match(/iPhone/i) ||
+        userAgent.match(/iPod/i)
+      ) {
+        return "iOS";
+      } else if (userAgent.match(/Android/i)) {
+        return "Android";
+      } else {
+        return "unknown";
+      }
+    }
+
+    function onLoad() {
+      var fbUrl = "https://www.facebook.com/SpitfireKaraoke";
+      var igUrl = "https://www.instagram.com/spitfire_karaoke/";
+      //var urlLink3 = "twitter link?";
+      switch (getMobileOperatingSystem()) {
+        case "Android":
+          fbUrl =
+            "intent://page/100544965626744?referrer=app_link#Intent;package=com.facebook.katana;scheme=fb;end";
+          igUrl =
+            "intent://www.instagram.com/spitfire_karaoke/#Intent;package=com.instagram.android;scheme=https;end";
+          //urlLink3 = "twitter link?";
+          break;
+        case "iOS":
+          fbUrl = "fb://page/?id=100544965626744";
+          igUrl = "instagram://user?username=spitfire_karaoke";
+          //urlLink3 = "twitter link?";
+          break;
+        default:
+          break;
+      }
+      document.getElementById("fb-link").setAttribute("href", fbUrl);
+      document.getElementById("ig-link").setAttribute("href", igUrl);
+      //document.getElementById("yourLink3").setAttribute("href", urlLink3);
+    }
+    window.onload = onLoad;
+  </script>
 </html>
